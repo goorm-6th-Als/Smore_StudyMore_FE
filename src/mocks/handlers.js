@@ -3,67 +3,75 @@ import { setupWorker, rest } from 'msw';
 // const studyPk = 591138934038569899;
 
 export const handlers = [
-    rest.get('/mystudy', (req, res, ctx) => {
-        console.log('');
-        return res(
-            ctx.status(200),
-            ctx.json({
-                studyList: [
-                    {
-                        studyPk: 1,
-                        studyName: '자바보라능',
-                        studyImg: '/img/sample-img-1.png',
-                        studyPersonNum: 4,
-                        maxPeople: 5,
-                        studyStartDate: '2023-01-01',
-                        studyEndDate: '2023-12-31',
-                    },
-                    {
-                        studyPk: 2,
-                        studyName: '네트워King',
-                        studyImg: '/img/sample-img-2.png',
-                        studyPersonNum: 4,
-                        studyStartDate: '2023-01-01',
-                        studyEndDate: '2023-12-31',
-                    },
-                ],
-            })
-        );
-    }),
-    rest.get('/mystudy/admin', (req, res, ctx) => {
-        console.log('');
-        return res(
-            ctx.status(200),
-            ctx.json({
-                studyList: [
-                    {
-                        studyPk: 3,
-                        studyName: '빌런저장소',
-                        studyImg: '/img/sample-img-1.png',
-                        studyPersonNum: 4,
-                        studyStartDate: '2023-01-01',
-                        studyEndDate: '2023-12-31',
-                    },
-                    {
-                        studyPk: 4,
-                        studyName: '아마zone',
-                        studyImg: '/img/sample-img-2.png',
-                        studyPersonNum: 4,
-                        studyStartDate: '2023-01-01',
-                        studyEndDate: '2023-12-31',
-                    },
-                    {
-                        studyPk: 5,
-                        studyName: '자율스터디',
-                        studyImg: '/img/sample-img-3.jpg',
-                        studyPersonNum: 4,
-                        studyStartDate: '2023-01-01',
-                        studyEndDate: '2023-12-31',
-                    },
-                ],
-            })
-        );
-    }),
+  rest.get("/mystudy", (req, res, ctx) => {
+    console.log("");
+    return res(
+      ctx.status(200),
+      ctx.json({
+        studyList: [
+          {
+            studyPk: 1,
+            studyName: "자바보라능",
+            studyImg: "/img/sample-img-1.png",
+            studyPersonNum: 4,
+            maxPeople: 5,
+            studyStartDate: "2023-01-01",
+            studyEndDate: "2023-12-31",
+          },
+          {
+            studyPk: 2,
+            studyName: "네트워King",
+            studyImg: "/img/sample-img-2.png",
+            studyPersonNum: 4,
+            studyStartDate: "2023-01-01",
+            studyEndDate: "2023-12-31",
+          },
+        ],
+      })
+    );
+  }),
+  rest.get("/mystudy/admin", (req, res, ctx) => {
+    console.log("");
+    return res(
+      ctx.status(200),
+      ctx.json({
+        studyList: [
+          {
+            studyPk: 3,
+            studyName: "빌런저장소",
+            studyImg: "/img/sample-img-1.png",
+            studyPersonNum: 4,
+            studyStartDate: "2023-01-01",
+            studyEndDate: "2023-12-31",
+          },
+          {
+            studyPk: 4,
+            studyName: "아마zone",
+            studyImg: "/img/sample-img-2.png",
+            studyPersonNum: 4,
+            studyStartDate: "2023-01-01",
+            studyEndDate: "2023-12-31",
+          },
+          {
+            studyPk: 5,
+            studyName: "자율스터디",
+            studyImg: "/img/sample-img-3.jpg",
+            studyPersonNum: 4,
+            studyStartDate: "2023-01-01",
+            studyEndDate: "2023-12-31",
+          },
+          {
+            studyPk: 6,
+            studyName: "자율스터디",
+            studyImg: "/img/sample-img-3.jpg",
+            studyPersonNum: 4,
+            studyStartDate: "2023-01-01",
+            studyEndDate: "2023-12-31",
+          },
+        ],
+      })
+    );
+  }),
 
     rest.get('/mystudy/apply/:studyPk', (req, res, ctx) => {
         const { studyPk } = req.params;
